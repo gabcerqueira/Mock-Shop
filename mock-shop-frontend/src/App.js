@@ -5,6 +5,7 @@ import "./App.css";
 // <-- views -->
 import HomePage from "./views/homepage/Homepage";
 import Hats from "./views/shop/hats/Hats";
+import ShopPage from "./views/shopPage/ShopPage";
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route exact path="/shop/hats" component={Hats} />
+					<Route exact path="/shop" component={ShopPage} />
 				</Switch>
 			</Router>
 		</>
