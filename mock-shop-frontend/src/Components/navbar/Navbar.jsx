@@ -5,9 +5,9 @@ import "./navbar.scss";
 const Navbar = () => {
 	return (
 		<div className="navbar">
-			<div className="content-logo">
+			<Link to="/" className="content-logo">
 				<i className="fas fa-crown fa-4x"></i>
-			</div>
+			</Link>
 			<div className="nav-list">
 				<Link to="/shop" className="nav-list-item">
 					Shop
