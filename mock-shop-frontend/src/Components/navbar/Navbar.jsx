@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import "./navbar.scss";
 
-const Navbar = () => {
+import { auth } from "../../firebase/firebase";
+
+const Navbar = ({ currentUser }) => {
 	return (
 		<div className="navbar">
 			<Link to="/" className="content-logo">
@@ -17,9 +19,17 @@ const Navbar = () => {
 				<Link to="/aboutUs" className="nav-list-item">
 					About Us
 				</Link>
-				<Link to="/signIn" className="nav-list-item">
-					Sign in
-				</Link>
+
+				{currentUser ? (
+					<div onClick={() => auth.signOut()} className="nav-list-item">
+						Sign out
+					</div>
+				) : (
+					<Link to="/signIn" className="nav-list-item">
+						Sign in
+					</Link>
+				)}
+
 				<Link to="/contact" className="nav-list-item">
 					Contact
 				</Link>
