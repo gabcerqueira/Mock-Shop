@@ -34,12 +34,6 @@ const Navbar = ({ currentUser }) => {
 					Contact
 				</Link>
 			</div>
-			<div className="social-list">
-				<i className="fab fa-facebook fa-2x social-list-item"></i>
-				<i className="fab fa-instagram fa-2x social-list-item"></i>
-				<i className="fab fa-twitter fa-2x social-list-item"></i>
-				<i className="fab fa-linkedin fa-2x social-list-item"></i>
-			</div>
 		</div>
 	);
 };

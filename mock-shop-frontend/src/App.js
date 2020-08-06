@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/navbar/Navbar";
 import "./App.css";
 
-import { auth } from "./firebase/firebase";
+import { auth, createUserProfileDocument } from "./firebase/firebase";
 
 // <-- views -->
 import HomePage from "./views/homepage/Homepage";
@@ -22,8 +22,18 @@ class App extends React.Component {
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
-		this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
-			this.setState({ currentUser: user });
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+			if (userAuth) {
+				const userRef = await createUserProfileDocument(userAuth);
+
+				userRef.onSnapshot((snapshot) => {
+					this.setState({
+						currentUser: { id: snapshot.id, ...snapshot.data() },
+					});
+				});
+			}
+
+			this.setState({ currentUser: userAuth });
 		});
 	}
 

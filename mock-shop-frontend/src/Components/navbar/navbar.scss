@@ -16,7 +16,7 @@
     height: 70%;
     width: 70px;
     padding: 25px;
-    align-self: center;
+    align-items: center;
 
 
 
@@ -43,9 +43,10 @@
       font-weight: bold;
       font-size: 20px;
       cursor: pointer;
-      border: 1px solid black;
+
       text-decoration: none;
       color: black;
+      border-radius: 25px;
 
       &:hover {
         color: snow;
@@ -57,28 +58,4 @@
 
 
   }
-
-
-
-  .social-list {
-    width: 180px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .social-list-item {
-      margin: 5px;
-      cursor: pointer;
-
-      &:hover {
-        color: black;
-      }
-    }
-
-
-  }
-
-
-
 }
