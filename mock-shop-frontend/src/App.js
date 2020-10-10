@@ -14,11 +14,12 @@ import "./App.css";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase";
 
-// <-- views -->
+// <-- Views -->
 import HomePage from "./views/homepage/Homepage";
 import Hats from "./views/shop/hats/Hats";
 import ShopPage from "./views/shopPage/ShopPage";
 import SignInAndSignUp from "./views/sign-in-and-sign-up/SignInAndSignUp";
+import CheckOut from "./views/checkout/CheckOut";
 
 class App extends React.Component {
 	unsubscribeFromAuth = null;
@@ -51,6 +52,7 @@ class App extends React.Component {
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/shop/hats" component={Hats} />
 						<Route exact path="/shop" component={ShopPage} />
+						<Route exact path="/checkout" component={CheckOut} />
 						<Route
 							exact
 							path="/signIn"
