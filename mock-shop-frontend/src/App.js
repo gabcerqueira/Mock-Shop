@@ -7,7 +7,9 @@ import {
 } from "react-router-dom";
 import Navbar from "./Components/navbar/Navbar";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import { setCurrentUser } from "./actions/userActions";
+import { selectCurrentUser } from "./redux/user/userSelectors";
 import "./App.css";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase";
@@ -67,8 +69,8 @@ class App extends React.Component {
 	}
 }
 
-const mapStateToProps = ({ user }) => ({
-	currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
