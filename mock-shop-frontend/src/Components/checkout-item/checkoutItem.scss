@@ -23,7 +23,17 @@
   }
 
   .quantity {
-    padding-left: 20px;
+    
+    display: flex;
+    flex-flow: row;
+    
+    .arrow{
+      margin: 0 5px;
+      cursor: pointer;
+      &:focus{
+        outline: none;
+      }
+    }
   }
 
   .remove-button {
