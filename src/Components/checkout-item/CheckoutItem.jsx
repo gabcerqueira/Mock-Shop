@@ -6,31 +6,38 @@ import {
 	removeItem,
 	addItem,
 } from "../../actions/cartActions";
-import "./checkoutItem.scss";
+import {
+	CheckoutItemContainer,
+	ImageContainer,
+	Img,
+	Name,
+	Quantity,
+	Arrow,
+	Value,
+	Price,
+	RemoveButtonContainer,
+	RemoveButton,
+} from "./CheckoutItem.styles";
 
 const CheckoutItem = ({ item, clearItem, removeItem, addItem }) => {
 	const { imageUrl, name, quantity, price } = item;
 
 	return (
-		<div className="checkout-item">
-			<div className="image-container">
-				<img src={imageUrl} alt="item" />
-			</div>
-			<span className="name">{name}</span>
-			<span className="quantity">
-				<div className="arrow" onClick={() => removeItem(item)}>
-					&#10094;
-				</div>
-				<span className="value">{quantity}</span>
-				<div className="arrow" onClick={() => addItem(item)}>
-					&#10095;
-				</div>
-			</span>
-			<span className="price">${price}</span>
-			<div className="remove-button" onClick={() => clearItem(item)}>
-				<span>&#10006;</span>
-			</div>
-		</div>
+		<CheckoutItemContainer>
+			<ImageContainer>
+				<Img src={imageUrl} alt="item" />
+			</ImageContainer>
+			<Name className="name">{name}</Name>
+			<Quantity className="quantity">
+				<Arrow onClick={() => removeItem(item)}>&#10094;</Arrow>
+				<Value>{quantity}</Value>
+				<Arrow onClick={() => addItem(item)}>&#10095;</Arrow>
+			</Quantity>
+			<Price>${price}</Price>
+			<RemoveButtonContainer onClick={() => clearItem(item)}>
+				<RemoveButton>&#10006;</RemoveButton>
+			</RemoveButtonContainer>
+		</CheckoutItemContainer>
 	);
 };
 

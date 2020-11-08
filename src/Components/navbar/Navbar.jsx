@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartIcon from "../../Components/cart-icon/CartIcon";
 import CartDropdown from "../../Components/cart-dropdown/CartDropdown";
@@ -8,42 +7,35 @@ import { selectCurrentUser } from "../../redux/user/userSelectors";
 import { selectCartHidden } from "../../redux/cart/cartSelectors";
 import { auth } from "../../firebase/firebase";
 import { createStructuredSelector } from "reselect";
-import "./navbar.scss";
+import {
+	NavbarContainer,
+	LogoContainer,
+	NavListContainer,
+	NavListItemLink,
+} from "./Navbar.styles";
 
 const Navbar = ({ currentUser, hidden }) => {
 	return (
-		<div className="navbar">
-			<Link to="/" className="content-logo">
+		<NavbarContainer>
+			<LogoContainer to="/">
 				<Logo className="logo" />
-			</Link>
+			</LogoContainer>
 
-			<div className="nav-list">
-				<Link to="/shop" className="nav-list-item">
-					Shop
-				</Link>
-
-				<Link to="/aboutUs" className="nav-list-item">
-					About Us
-				</Link>
-
+			<NavListContainer>
+				<NavListItemLink to="/shop">Shop</NavListItemLink>
+				<NavListItemLink to="/aboutUs">About Us</NavListItemLink>
 				{currentUser ? (
-					<div onClick={() => auth.signOut()} className="nav-list-item">
+					<NavListItemLink as="div" onClick={() => auth.signOut()}>
 						Sign out
-					</div>
+					</NavListItemLink>
 				) : (
-					<Link to="/signIn" className="nav-list-item">
-						Sign in
-					</Link>
+					<NavListItemLink to="/signIn">Sign in</NavListItemLink>
 				)}
-
-				<Link to="/contact" className="nav-list-item">
-					Contact
-				</Link>
+				<NavListItemLink to="/contact">Contact</NavListItemLink>
 				<CartIcon />
-			</div>
-
+			</NavListContainer>
 			{hidden ? null : <CartDropdown />}
-		</div>
+		</NavbarContainer>
 	);
 };
 

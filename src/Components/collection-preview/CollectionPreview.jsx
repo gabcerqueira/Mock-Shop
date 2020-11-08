@@ -1,19 +1,24 @@
 import React from "react";
 import CollectionItem from "../collection-item/CollectionItem";
+import {
+	CollectionPreviewContainer,
+	CollectionTitle,
+	Preview,
+} from "./CollectionPreview.styles";
 import "./collectionPreview.scss";
 
 const CollectionPreview = ({ title, items }) => {
 	return (
-		<div className="collection-preview">
-			<h1 className="title">{title.toUpperCase()}</h1>
-			<div className="preview">
+		<CollectionPreviewContainer>
+			<CollectionTitle>{title.toUpperCase()}</CollectionTitle>
+			<Preview>
 				{items
 					.filter((item, index) => index < 4)
 					.map((item) => (
 						<CollectionItem key={item.id} item={item} />
 					))}
-			</div>
-		</div>
+			</Preview>
+		</CollectionPreviewContainer>
 	);
 };
 
