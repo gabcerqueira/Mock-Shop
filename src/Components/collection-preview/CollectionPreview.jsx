@@ -5,12 +5,16 @@ import {
 	CollectionTitle,
 	Preview,
 } from "./CollectionPreview.styles";
+
 import "./collectionPreview.scss";
 
 const CollectionPreview = ({ title, items }) => {
 	return (
 		<CollectionPreviewContainer>
-			<CollectionTitle>{title.toUpperCase()}</CollectionTitle>
+			<CollectionTitle to={`/shop/${title.toLowerCase()}`}>
+				{title.toUpperCase()}
+			</CollectionTitle>
+
 			<Preview>
 				{items
 					.filter((item, index) => index < 4)
