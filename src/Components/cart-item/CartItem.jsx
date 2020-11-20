@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
 import {
 	CartItemContainer,
 	CartItemImg,
@@ -8,11 +8,17 @@ import {
 	CartItemPrice,
 } from "./CartItem.styles";
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, history }) => {
 	const { imageUrl, price, name, quantity } = item;
 	return (
 		<CartItemContainer>
-			<CartItemImg src={imageUrl} alt="item" />
+			<CartItemImg
+				src={imageUrl}
+				alt="item"
+				onClick={() => {
+					history.push(`/product/${item.id}`);
+				}}
+			/>
 			<CartItemDetails>
 				<CartItemName>{name}</CartItemName>
 				<CartItemPrice>
@@ -23,4 +29,4 @@ const CartItem = ({ item }) => {
 	);
 };
 
-export default CartItem;
+export default withRouter(CartItem);

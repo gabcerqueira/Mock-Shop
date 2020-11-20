@@ -33,7 +33,8 @@ export const BackgroundImage = styled.div`
 	background-size: cover;
 	background-position: center;
 	margin-bottom: 5px;
-	background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+	background-image: ${({ imageurl }) => `url(${imageurl})`};
+	cursor: pointer;
 `;
 
 export const CollectionFooterContainer = styled.div`

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import {
 	clearItemFromCart,
@@ -19,12 +19,16 @@ import {
 	RemoveButton,
 } from "./CheckoutItem.styles";
 
-const CheckoutItem = ({ item, clearItem, removeItem, addItem }) => {
+const CheckoutItem = ({ item, clearItem, removeItem, addItem, history }) => {
 	const { imageUrl, name, quantity, price } = item;
 
 	return (
 		<CheckoutItemContainer>
-			<ImageContainer>
+			<ImageContainer
+				onClick={() => {
+					history.push(`/product/${item.id}`);
+				}}
+			>
 				<Img src={imageUrl} alt="item" />
 			</ImageContainer>
 			<Name className="name">{name}</Name>
@@ -47,4 +51,4 @@ const mapDispatchToProps = (dispatch) => ({
 	addItem: (item) => dispatch(addItem(item)),
 });
 
-export default connect(null, mapDispatchToProps)(CheckoutItem);
+export default connect(null, mapDispatchToProps)(withRouter(CheckoutItem));

@@ -70,14 +70,31 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 		accumulator[collection.title.toLowerCase()] = collection;
 		return accumulator;
 	}, {});
+	//exemplo de chamada
+	/*
+		addCollectionAndDocuments(
+			"collections",
+			collectionsArray.map(({ title, items }) => ({ title, items }))
+		);
+		*/
+};
+
+export const getSingleObject = (collections, itemId) => {
+	const collectionsItems = collections.map((collection) => collection.items);
+	const item = collectionsItems.map((items) =>
+		items.find((element) => element.id == itemId)
+	);
+	const product = item.filter((item) => item !== undefined);
+
+	return product.reduce((acc, item) => item, {});
 };
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: "select_account" });
 
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
 
 export default firebase;

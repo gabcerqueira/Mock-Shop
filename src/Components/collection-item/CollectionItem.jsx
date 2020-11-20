@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addItem } from "../../actions/cartActions";
 import {
@@ -11,12 +11,17 @@ import {
 	CollectionFooterContainer,
 } from "./CollectionItem.styles";
 
-const collectionItem = ({ item, addItem }) => {
+const collectionItem = ({ item, addItem, history }) => {
 	const { name, price, imageUrl } = item;
 
 	return (
 		<CollectionItemContainer>
-			<BackgroundImage imageUrl={imageUrl} />
+			<BackgroundImage
+				imageurl={imageUrl}
+				onClick={() => {
+					history.push(`/product/${item.id}`);
+				}}
+			/>
 
 			<CollectionFooterContainer>
 				<NameContainer>{name}</NameContainer>
@@ -33,4 +38,4 @@ const mapDispatchToProps = (dispatch) => ({
 	addItem: (item) => dispatch(addItem(item)),
 });
 
-export default connect(null, mapDispatchToProps)(collectionItem);
+export default connect(null, mapDispatchToProps)(withRouter(collectionItem));
