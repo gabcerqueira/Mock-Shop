@@ -6,8 +6,17 @@ import {
 	auth,
 	googleProvider,
 	createUserProfileDocument,
+	getCurrentUser,
 } from "../../firebase/firebase";
-import { signInSuccess, signInFailure } from "../../actions/userActions";
+import {
+	signInSuccess,
+	signInFailure,
+	signOutSuccess,
+	signOutFailure,
+	signUpSuccess,
+	signUpFailure,
+} from "../../actions/userActions";
+import { clearCart } from "../../actions/cartActions";
 
 export function* getSnapshotFromUserAuth(userAuth) {
 	try {
@@ -36,6 +45,37 @@ export function* signInWithEmailAsync({ payload: { email, password } }) {
 	}
 }
 
+export function* isUserAuthenticated() {
+	try {
+		const userAuth = yield getCurrentUser();
+		if (!userAuth) return;
+		yield getSnapshotFromUserAuth(userAuth);
+	} catch (error) {
+		yield put(signInFailure(error.message));
+	}
+}
+
+export function* isUserSignedOut() {
+	try {
+		yield auth.signOut();
+		yield put(signOutSuccess());
+		yield put(clearCart());
+	} catch (error) {
+		yield put(signOutFailure(error.message));
+	}
+}
+
+export function* isUserSignedUp({ payload: { email, password, displayName } }) {
+	try {
+		const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+		yield createUserProfileDocument(user, { displayName });
+		yield put(signUpSuccess(user));
+		yield getSnapshotFromUserAuth(user);
+	} catch (error) {
+		yield put(signUpFailure(error.message));
+	}
+}
+
 export function* emailSignInStart() {
 	yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START, signInWithEmailAsync);
 }
@@ -44,6 +84,24 @@ export function* googleSignInStart() {
 	yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, googleSignInAsync);
 }
 
+export function* onCheckUserSession() {
+	yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
+}
+
+export function* onUserSignOutStart() {
+	yield takeLatest(UserActionTypes.SIGN_OUT_START, isUserSignedOut);
+}
+
+export function* onSignUpStart() {
+	yield takeLatest(UserActionTypes.SIGN_UP_START, isUserSignedUp);
+}
+
 export function* userSagas() {
-	yield all([call(googleSignInStart), call(emailSignInStart)]);
+	yield all([
+		call(googleSignInStart),
+		call(emailSignInStart),
+		call(onCheckUserSession),
+		call(onUserSignOutStart),
+		call(onSignUpStart),
+	]);
 }

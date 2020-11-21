@@ -34,7 +34,7 @@ export const NavListItemLink = styled(Link)`
 	margin: 10px;
 
 	max-height: 50%;
-	width: 150px;
+	width: 100px;
 	font-weight: bold;
 	font-size: 20px;
 	cursor: pointer;
@@ -42,7 +42,6 @@ export const NavListItemLink = styled(Link)`
 	text-decoration: none;
 	color: black;
 	border-radius: 10px;
-
 	&:hover {
 		color: snow;
 		background: black;

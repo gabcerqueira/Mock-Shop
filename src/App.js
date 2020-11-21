@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
 	BrowserRouter as Router,
 	Route,
@@ -9,6 +9,7 @@ import Navbar from "./Components/navbar/Navbar";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/userSelectors";
+import { checkUserSession } from "./actions/userActions";
 import "./App.css";
 
 // <-- Views -->
@@ -18,7 +19,10 @@ import SignInAndSignUp from "./views/sign-in-and-sign-up/SignInAndSignUp";
 import CheckOut from "./views/checkout/CheckOut";
 import SingleProductPage from "./views/SingleProductPage/SingleProductPage";
 
-const App = ({ currentUser }) => {
+const App = ({ currentUser, checkUserSession }) => {
+	useEffect(() => {
+		checkUserSession();
+	}, [checkUserSession]);
 	return (
 		<>
 			<Router>
@@ -45,4 +49,8 @@ const mapStateToProps = createStructuredSelector({
 	currentUser: selectCurrentUser,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => ({
+	checkUserSession: () => dispatch(checkUserSession()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
