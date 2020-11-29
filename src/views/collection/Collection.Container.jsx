@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectIsCollectionsLoaded } from "../../redux/shop/shopSelectors";
-import WithSpinner from "../../Components/with-spinner/Spinner";
+import WithSpinner from "../../Components/with-spinner/WithSpinner";
 import Collection from "./Collection";
 
 const mapStateToProps = createStructuredSelector({

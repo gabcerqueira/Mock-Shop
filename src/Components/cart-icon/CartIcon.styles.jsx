@@ -8,6 +8,11 @@ export const CartIconContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+
+	&:hover {
+		top: -2px;
+		border-bottom: 2px solid black;
+	}
 `;
 
 export const CartItemCount = styled.span`

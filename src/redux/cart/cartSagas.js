@@ -6,7 +6,9 @@ import UserActionTypes from "../user/userTypes";
 export function* clearCartOnSignOut() {
 	try {
 		yield put(clearCart());
-	} catch (error) {}
+	} catch (error) {
+		yield console.log(error.message);
+	}
 }
 
 export function* onClearCart() {

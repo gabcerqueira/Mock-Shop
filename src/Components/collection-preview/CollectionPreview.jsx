@@ -1,10 +1,10 @@
 import React from "react";
-import CollectionItem from "../collection-item/CollectionItem";
 import {
 	CollectionPreviewContainer,
 	CollectionTitle,
 	Preview,
 } from "./CollectionPreview.styles";
+import Carousel from "../Carousel/Carousel";
 
 import "./collectionPreview.scss";
 
@@ -16,11 +16,7 @@ const CollectionPreview = ({ title, items }) => {
 			</CollectionTitle>
 
 			<Preview>
-				{items
-					.filter((item, index) => index < 4)
-					.map((item) => (
-						<CollectionItem key={item.id} item={item} />
-					))}
+				<Carousel data={items} />
 			</Preview>
 		</CollectionPreviewContainer>
 	);

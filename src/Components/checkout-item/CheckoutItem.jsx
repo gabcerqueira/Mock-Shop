@@ -33,11 +33,15 @@ const CheckoutItem = ({ item, clearItem, removeItem, addItem, history }) => {
 			</ImageContainer>
 			<Name className="name">{name}</Name>
 			<Quantity className="quantity">
-				<Arrow onClick={() => removeItem(item)}>&#10094;</Arrow>
+				<Arrow onClick={() => removeItem(item)}>
+					<i class="fas fa-arrow-left"></i>
+				</Arrow>
 				<Value>{quantity}</Value>
-				<Arrow onClick={() => addItem(item)}>&#10095;</Arrow>
+				<Arrow onClick={() => addItem(item)}>
+					<i class="fas fa-arrow-right"></i>
+				</Arrow>
 			</Quantity>
-			<Price>${price}</Price>
+			<Price>R${price}</Price>
 			<RemoveButtonContainer onClick={() => clearItem(item)}>
 				<RemoveButton>&#10006;</RemoveButton>
 			</RemoveButtonContainer>

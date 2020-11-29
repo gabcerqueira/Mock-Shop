@@ -1,36 +1,38 @@
-import React from "react";
+import React, { lazy, useEffect } from "react";
 
 import { Route } from "react-router-dom";
-import CollectionOverviewContainer from "../../Components/collection-overview/CollectionsOverview.Container";
 import { connect } from "react-redux";
 import { fetchCollectionsStart } from "../../actions/shopActions";
+
 import "./shopPage.scss";
-import CollectionContainer from "../collection/Collection.Container";
 
-class ShopPage extends React.Component {
-	componentDidMount() {
-		const { fetchCollectionsStart } = this.props;
+// <-- Lazy imports -->
+const CollectionOverviewContainer = lazy(() =>
+	import("../../Components/collection-overview/CollectionsOverview.Container")
+);
+const CollectionContainer = lazy(() =>
+	import("../collection/Collection.Container")
+);
+
+const ShopPage = ({ fetchCollectionsStart, match }) => {
+	useEffect(() => {
 		fetchCollectionsStart();
-	}
+	}, [fetchCollectionsStart]);
 
-	render() {
-		const { match } = this.props;
-
-		return (
-			<div className="shop-page">
-				<Route
-					exact
-					path={`${match.path}`}
-					component={CollectionOverviewContainer}
-				/>
-				<Route
-					path={`${match.path}/:collectionId`}
-					component={CollectionContainer}
-				/>
-			</div>
-		);
-	}
-}
+	return (
+		<div className="shop-page">
+			<Route
+				exact
+				path={`${match.path}`}
+				component={CollectionOverviewContainer}
+			/>
+			<Route
+				path={`${match.path}/:collectionId`}
+				component={CollectionContainer}
+			/>
+		</div>
+	);
+};
 
 const mapDispatchToProps = (dispatch) => ({
 	fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),

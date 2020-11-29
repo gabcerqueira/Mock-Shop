@@ -3,9 +3,10 @@ import { Route } from "react-router-dom";
 import SingleProduct from "../../Components/singleProduct/SingleProduct";
 import { fetchCollectionsStart } from "../../actions/shopActions";
 import { connect } from "react-redux";
-import WithSpinner from "../../Components/with-spinner/Spinner";
+import WithSpinner from "../../Components/with-spinner/WithSpinner";
 import { selectIsFetching } from "../../redux/shop/shopSelectors";
 import { createStructuredSelector } from "reselect";
+import { SingleProductPageContainer } from "./SingleProductPage.styles";
 
 const SingleProductPageWithSpinner = WithSpinner(SingleProduct);
 
@@ -17,14 +18,14 @@ const SingleProductPage = ({ match, fetchCollectionsStart, isLoading }) => {
 	}, [fetchCollectionsStart]);
 
 	return (
-		<>
+		<SingleProductPageContainer>
 			<Route
 				path={`/product/${itemId}`}
 				render={(props) => (
 					<SingleProductPageWithSpinner isLoading={isLoading} {...props} />
 				)}
 			/>
-		</>
+		</SingleProductPageContainer>
 	);
 };
 

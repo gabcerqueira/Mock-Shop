@@ -16,7 +16,6 @@ import {
 	signUpSuccess,
 	signUpFailure,
 } from "../../actions/userActions";
-import { clearCart } from "../../actions/cartActions";
 
 export function* getSnapshotFromUserAuth(userAuth) {
 	try {
@@ -59,7 +58,6 @@ export function* isUserSignedOut() {
 	try {
 		yield auth.signOut();
 		yield put(signOutSuccess());
-		yield put(clearCart());
 	} catch (error) {
 		yield put(signOutFailure(error.message));
 	}

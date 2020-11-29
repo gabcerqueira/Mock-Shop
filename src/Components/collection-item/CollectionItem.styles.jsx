@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { CustomButtonContainer } from "../custom-button/CustomButton.styles";
-
 export const CollectionItemContainer = styled.div`
 	width: 22vw;
 	display: flex;
@@ -8,6 +7,8 @@ export const CollectionItemContainer = styled.div`
 	height: 350px;
 	align-items: center;
 	position: relative;
+	margin: 0 5px;
+
 	&:hover {
 		.image {
 			opacity: 0.8;
@@ -17,14 +18,29 @@ export const CollectionItemContainer = styled.div`
 			display: flex;
 		}
 	}
+
+	@media screen and (max-width: 800px) {
+		width: 40vw;
+		&:hover {
+			.image {
+				opacity: unset;
+			}
+		}
+	}
 `;
 
 export const AddButton = styled(CustomButtonContainer)`
 	width: 80%;
 	opacity: 0.7;
 	position: absolute;
-	top: 255px;
+	top: 245px;
 	display: none;
+	@media screen and (max-width: 800px) {
+		display: block;
+		padding: 0 10px;
+		min-width: unset;
+		opacity: 0.6;
+	}
 `;
 
 export const BackgroundImage = styled.div`
@@ -35,6 +51,12 @@ export const BackgroundImage = styled.div`
 	margin-bottom: 5px;
 	background-image: ${({ imageurl }) => `url(${imageurl})`};
 	cursor: pointer;
+
+	&:hover {
+		-webkit-box-shadow: 2px 2px 11px 3px rgba(0, 0, 0, 0.46);
+		-moz-box-shadow: 2px 2px 11px 3px rgba(0, 0, 0, 0.46);
+		box-shadow: 2px 2px 11px 3px rgba(0, 0, 0, 0.46);
+	}
 `;
 
 export const CollectionFooterContainer = styled.div`
@@ -43,15 +65,23 @@ export const CollectionFooterContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	font-size: 18px;
+	margin-bottom: 20px;
 `;
 
 export const NameContainer = styled.span`
-	width: 90%;
+	width: 85%;
 	margin-bottom: 15px;
+	@media screen and (max-width: 800px) {
+		width: 80%;
+	}
 `;
 
 export const PriceContainer = styled.span`
-	width: 10%;
+	width: 15%;
 	text-align: right;
-	margin-right: 8px;
+
+	@media screen and (max-width: 800px) {
+		width: 20%;
+		margin: 0px 10px;
+	}
 `;

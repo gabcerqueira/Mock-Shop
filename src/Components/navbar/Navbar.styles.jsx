@@ -8,7 +8,13 @@ export const NavbarContainer = styled.div`
 	width: 100%;
 	height: 70px;
 	margin: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
+
+	@media screen and (max-width: 800px) {
+		height: 60px;
+		padding: 10px;
+		margin-bottom: 20px;
+	}
 `;
 
 export const LogoContainer = styled(Link)`
@@ -17,7 +23,13 @@ export const LogoContainer = styled(Link)`
 	height: 70%;
 	width: 70px;
 	padding: 25px;
+
 	align-items: center;
+
+	@media screen and (max-width: 800px) {
+		width: 50px;
+		padding: 0px;
+	}
 `;
 
 export const NavListContainer = styled.div`
@@ -28,6 +40,29 @@ export const NavListContainer = styled.div`
 	text-align: center;
 	justify-content: space-between;
 	align-items: center;
+	padding: 0 20px;
+
+	@media screen and (max-width: 800px) {
+		width: 80%;
+		margin-right: 20px;
+	}
+`;
+
+export const NavListContainerToggled = styled.div`
+	width: 60%;
+	height: 300px;
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	text-align: right;
+	justify-content: space-between;
+	align-items: flex-end;
+	background-color: lightgreen;
+
+	@media screen and (max-width: 800px) {
+		width: 80%;
+	}
 `;
 
 export const NavListItemLink = styled(Link)`
@@ -41,9 +76,8 @@ export const NavListItemLink = styled(Link)`
 
 	text-decoration: none;
 	color: black;
-	border-radius: 10px;
+
 	&:hover {
-		color: snow;
-		background: black;
+		border-bottom: 2px solid black;
 	}
 `;

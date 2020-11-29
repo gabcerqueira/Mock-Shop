@@ -1,4 +1,14 @@
-.collections-overview {
+
+.containerOverview{
+
   display: flex;
   flex-direction: column;
+
+  .collections-overview {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
+
+

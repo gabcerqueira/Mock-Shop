@@ -27,7 +27,7 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
 					type="email"
 					value={email}
 					required
-					label="Email"
+					label="email"
 					handleChange={(e) => setEmail(e.target.value)}
 				/>
 				<FormInput

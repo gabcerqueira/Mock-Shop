@@ -12,7 +12,7 @@ const StripeButton = ({ price }) => {
 	return (
 		<StripeCheckout
 			label="Pay Now"
-			name="Mock Shop ltd."
+			name="Mock-Shop Ltda"
 			billingAddress
 			shippingAddress
 			image="https://svgshare.com/i/CUz.svg"

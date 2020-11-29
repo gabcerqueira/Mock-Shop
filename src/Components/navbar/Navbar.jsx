@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartIcon from "../../Components/cart-icon/CartIcon";
 import CartDropdown from "../../Components/cart-dropdown/CartDropdown";
@@ -12,9 +12,18 @@ import {
 	LogoContainer,
 	NavListContainer,
 	NavListItemLink,
+	NavListContainerToggled,
 } from "./Navbar.styles";
 
 const Navbar = ({ currentUser, hidden, signOutStart }) => {
+	const [show, setShow] = useState(false);
+
+	console.log(window.innerWidth);
+
+	const showMenu = () => {
+		setShow(!show);
+	};
+
 	return (
 		<NavbarContainer>
 			<LogoContainer to="/">
@@ -37,6 +46,7 @@ const Navbar = ({ currentUser, hidden, signOutStart }) => {
 				</NavListItemLink>
 				<CartIcon />
 			</NavListContainer>
+
 			{hidden ? null : <CartDropdown />}
 		</NavbarContainer>
 	);
