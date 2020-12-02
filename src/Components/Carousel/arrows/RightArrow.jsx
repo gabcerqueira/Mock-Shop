@@ -4,7 +4,7 @@ import { RightArrowContainer } from "./Arrows.styles";
 
 const RightArrow = ({ goToNext }) => (
 	<RightArrowContainer onClick={goToNext}>
-		<span class="fas fa-arrow-circle-right fa-2x"></span>
+		<span className="fas fa-arrow-circle-right fa-2x"></span>
 	</RightArrowContainer>
 );
 

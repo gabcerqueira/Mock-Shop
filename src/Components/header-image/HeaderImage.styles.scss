@@ -17,12 +17,13 @@
     }
 
     .text {
-      top: 30%;
+      top: 18%;
 
       h1 {
         letter-spacing: 0.2em;
-        font-size: 180px;
+        font-size: 130px;
       }
+
     }
   }
 
@@ -49,12 +50,12 @@
     width: 100%;
     transform: translate(-50%);
     z-index: 1;
-    position: relative;
+    
     text-align: center;
 
     h1 {
       letter-spacing: 0.1em;
-      font-size: 80px;
+      font-size: 70px;
     }
 
     p {

@@ -4,10 +4,10 @@ const arrowStyles = css`
 	cursor: pointer;
 	border: none;
 	height: 0px;
-	padding: 0;
-	
+	padding: 0 15px;
+	outline: none;
+
 	margin-top: 140px;
-	
 
 	background-color: lightgrey;
 	opacity: 0.7;

@@ -29,4 +29,4 @@ const CartItem = ({ item, history }) => {
 	);
 };
 
-export default withRouter(CartItem);
+export default withRouter(React.memo(CartItem));

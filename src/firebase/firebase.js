@@ -41,6 +41,17 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 	return userRef;
 };
 
+export const addDataToCollections = async (
+	collectionName,
+	subCollectionId,
+	items
+) => {
+	const collectionRef = firestore
+		.doc(`/${collectionName}/${subCollectionId}`)
+		.set(items);
+	collectionRef();
+};
+
 export const addCollectionAndDocuments = async (
 	collectionKey,
 	objectsToAdd
@@ -52,6 +63,17 @@ export const addCollectionAndDocuments = async (
 		batch.set(newDocRef, obj);
 	});
 	await batch.commit();
+
+	//exemplo de chamada :
+	//dat é o objeto, tem como exemplo em shop data
+	//const datArray = Object.keys(dat).map((key) => dat[key]);
+
+	/*
+		addCollectionAndDocuments(
+			"collections",
+			datArray.map(({ title, items }) => ({ title, items }))
+		);
+		*/
 };
 
 export const convertCollectionsSnapshotToMap = (collections) => {
@@ -71,12 +93,6 @@ export const convertCollectionsSnapshotToMap = (collections) => {
 		return accumulator;
 	}, {});
 	//exemplo de chamada
-	/*
-		addCollectionAndDocuments(
-			"collections",
-			collectionsArray.map(({ title, items }) => ({ title, items }))
-		);
-		*/
 };
 
 export const getSingleObject = (collections, itemId) => {

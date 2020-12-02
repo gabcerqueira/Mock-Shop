@@ -11,6 +11,7 @@ import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/userSelectors";
 import { checkUserSession } from "./actions/userActions";
 import { GlobalStyle } from "./global.styles";
+import ErrorBoundary from "./Components/error-boundary/ErrorBoundary";
 
 // <-- Components -->
 import Spinner from "./Components/spinner/Spinner";
@@ -29,26 +30,29 @@ const App = ({ currentUser, checkUserSession }) => {
 	useEffect(() => {
 		checkUserSession();
 	}, [checkUserSession]);
+
 	return (
 		<>
 			<Router>
 				<GlobalStyle />
 				<Navbar />
 				<Switch>
-					<Suspense fallback={<Spinner />}>
-						<Route exact path="/" component={HomePage} />
+					<ErrorBoundary>
+						<Suspense fallback={<Spinner />}>
+							<Route exact path="/" component={HomePage} />
 
-						<Route path="/shop" component={ShopPage} />
-						<Route exact path="/checkout" component={CheckOut} />
-						<Route path="/product/:itemId" component={SingleProductPage} />
-						<Route
-							exact
-							path="/signIn"
-							render={() =>
-								currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-							}
-						/>
-					</Suspense>
+							<Route path="/shop" component={ShopPage} />
+							<Route exact path="/checkout" component={CheckOut} />
+							<Route path="/product/:itemId" component={SingleProductPage} />
+							<Route
+								exact
+								path="/signIn"
+								render={() =>
+									currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+								}
+							/>
+						</Suspense>
+					</ErrorBoundary>
 				</Switch>
 			</Router>
 		</>

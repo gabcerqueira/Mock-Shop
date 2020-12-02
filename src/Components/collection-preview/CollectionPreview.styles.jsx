@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import { fadeIn } from "../../global.styles";
 export const CollectionPreviewContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin: auto;
 	margin-bottom: 30px;
 
 	@media screen and (max-width: 800px) {
@@ -26,6 +27,7 @@ export const CollectionTitle = styled(Link)`
 export const Preview = styled.div`
 	display: flex;
 	justify-content: space-between;
+	${fadeIn}
 
 	@media screen and (max-width: 800px) {
 		display: grid;

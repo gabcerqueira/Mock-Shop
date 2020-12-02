@@ -8,12 +8,18 @@ import {
 	selectCartTotal,
 } from "../../redux/cart/cartSelectors";
 import CheckoutItem from "../../Components/checkout-item/CheckoutItem";
+import HeaderImage from "../../Components/header-image/HeaderImage";
+import HeaderImageData from "../../data/headerImageData";
 import "./checkOut.scss";
 
 const CheckOut = ({ cartItems, totalValue }) => {
+	const imageUrl = HeaderImageData.checkout;
 	return (
-		<div className="checkout-page">
-			<div className="checkout-header">
+		<div className="checkout-page fadeIn">
+			<HeaderImage imageUrl={imageUrl}>
+				<h1>Checkout</h1>
+			</HeaderImage>
+			<div className="checkout-header fadeIn">
 				<div className="header-block">
 					<span>Product</span>
 				</div>
@@ -31,7 +37,7 @@ const CheckOut = ({ cartItems, totalValue }) => {
 				</div>
 			</div>
 			{cartItems.map((cartItem) => (
-				<CheckoutItem key={cartItem.id} item={cartItem} />
+				<CheckoutItem key={cartItem.id} item={cartItem} fadeIn />
 			))}
 			<div className="total">
 				<span>TOTAL: ${totalValue}</span>

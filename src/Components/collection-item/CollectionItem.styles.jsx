@@ -1,13 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import { CustomButtonContainer } from "../custom-button/CustomButton.styles";
+import { fadeCarousel } from "./../../global.styles";
 export const CollectionItemContainer = styled.div`
-	width: 22vw;
+	width: 20vw;
 	display: flex;
 	flex-direction: column;
 	height: 350px;
 	align-items: center;
 	position: relative;
 	margin: 0 5px;
+	${fadeCarousel};
 
 	&:hover {
 		.image {
@@ -84,4 +86,49 @@ export const PriceContainer = styled.span`
 		width: 20%;
 		margin: 0px 10px;
 	}
+`;
+const fastFadeIn = keyframes`
+	0%,
+  100% {
+    opacity: 0;
+  }
+  30%,
+  70% {
+    opacity: 1;
+	}
+	`;
+
+const fadeInFast = css`
+	opacity: 0;
+	animation-name: ${fastFadeIn};
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+`;
+const addedStyle = css`
+	display: block;
+	height: 88%;
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	margin-bottom: 5px;
+	background-color: rgba(0, 190, 190, 0.7);
+
+	span {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+		font-size: 40px;
+	}
+`;
+
+const setAdded = ({ added }) => (added ? addedStyle : null);
+
+export const AddedShow = styled.div`
+	display: none;
+
+	${setAdded}
+
+	${fadeInFast};
 `;

@@ -58,6 +58,55 @@ const SHOP_DATA = {
 				imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
 				price: 16,
 			},
+			{
+				id: 57,
+				imageUrl:
+					"https://images.pexels.com/photos/1070058/pexels-photo-1070058.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Fancy Brim",
+				price: 25,
+			},
+			{
+				id: 58,
+				imageUrl:
+					"https://images.pexels.com/photos/1215445/pexels-photo-1215445.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "NY Cap",
+				price: 129,
+			},
+			{
+				id: 59,
+				imageUrl:
+					"https://images.pexels.com/photos/2182515/pexels-photo-2182515.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Sheer Brim",
+				price: "30",
+			},
+			{
+				id: 60,
+				imageUrl:
+					"https://images.pexels.com/photos/3817723/pexels-photo-3817723.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Black Brim",
+				price: 45,
+			},
+			{
+				id: 61,
+				imageUrl:
+					"https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Brown Brim",
+				price: 20,
+			},
+			{
+				id: 62,
+				imageUrl:
+					"https://images.pexels.com/photos/2884310/pexels-photo-2884310.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Big Cowboy",
+				price: 45,
+			},
+			{
+				id: 63,
+				imageUrl:
+					"https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Flower Brim",
+				price: 55,
+			},
 		],
 	},
 	sneakers: {
@@ -113,6 +162,55 @@ const SHOP_DATA = {
 				imageUrl: "https://i.ibb.co/Mhh6wBg/timberlands.png",
 				price: 200,
 			},
+			{
+				id: 64,
+				imageUrl:
+					"https://images.pexels.com/photos/2048548/pexels-photo-2048548.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Nike White AirForce",
+				price: 175,
+			},
+			{
+				id: 65,
+				imageUrl:
+					"https://images.pexels.com/photos/2946956/pexels-photo-2946956.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Converse White",
+				price: 110,
+			},
+			{
+				id: 66,
+				imageUrl:
+					"https://images.pexels.com/photos/977912/pexels-photo-977912.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Platform Shoes",
+				price: 80,
+			},
+			{
+				id: 67,
+				imageUrl:
+					"https://images.pexels.com/photos/5639/legs-snickers-converse.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Converse Blue",
+				price: 199,
+			},
+			{
+				id: 68,
+				imageUrl:
+					"https://images.pexels.com/photos/2157455/pexels-photo-2157455.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Nike Air Zoom",
+				price: 229,
+			},
+			{
+				id: 69,
+				imageUrl:
+					"https://images.pexels.com/photos/3636684/pexels-photo-3636684.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Vans Yellow",
+				price: 80,
+			},
+			{
+				id: 70,
+				imageUrl:
+					"https://images.pexels.com/photos/1693115/pexels-photo-1693115.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "New Balance Grey",
+				price: 150,
+			},
 		],
 	},
 	jackets: {
@@ -149,6 +247,55 @@ const SHOP_DATA = {
 				name: "Tan Trench",
 				imageUrl: "https://i.ibb.co/M6hHc3F/brown-trench.png",
 				price: 185,
+			},
+			{
+				id: 44,
+				imageUrl:
+					"https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Yellow Hoodie",
+				price: 65,
+			},
+			{
+				id: 45,
+				imageUrl:
+					"https://images.pexels.com/photos/3215584/pexels-photo-3215584.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Tiger Jacket",
+				price: 85,
+			},
+			{
+				id: 46,
+				imageUrl:
+					"https://images.pexels.com/photos/3608981/pexels-photo-3608981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Black Jacket",
+				price: 75,
+			},
+			{
+				id: 47,
+				imageUrl:
+					"https://images.pexels.com/photos/3206114/pexels-photo-3206114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Yellow Coat",
+				price: 125,
+			},
+			{
+				id: 48,
+				imageUrl:
+					"https://images.pexels.com/photos/3724358/pexels-photo-3724358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Red Jacket",
+				price: 145,
+			},
+			{
+				id: 49,
+				imageUrl:
+					"https://images.pexels.com/photos/594610/pexels-photo-594610.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Khaki Jacket",
+				price: 65,
+			},
+			{
+				id: 50,
+				imageUrl:
+					"https://images.pexels.com/photos/1384218/pexels-photo-1384218.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Denim Jacket",
+				price: 50,
 			},
 		],
 	},
@@ -199,6 +346,62 @@ const SHOP_DATA = {
 				imageUrl: "https://i.ibb.co/qBcrsJg/white-vest.png",
 				price: 20,
 			},
+			{
+				id: 36,
+				imageUrl:
+					"https://images.pexels.com/photos/2235071/pexels-photo-2235071.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Pink Dress",
+				price: 100,
+			},
+			{
+				id: 37,
+				imageUrl:
+					"https://images.pexels.com/photos/1163194/pexels-photo-1163194.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Summer Dress Set",
+				price: 60,
+			},
+			{
+				id: 38,
+				imageUrl:
+					"https://images.pexels.com/photos/852860/pexels-photo-852860.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Flower Shirt",
+				price: 70,
+			},
+			{
+				id: 39,
+				imageUrl:
+					"https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Gray Shirt",
+				price: 50,
+			},
+			{
+				id: 40,
+				imageUrl:
+					"https://images.pexels.com/photos/449977/pexels-photo-449977.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Black Riders",
+				price: 140,
+			},
+			{
+				id: 41,
+				imageUrl:
+					"https://images.pexels.com/photos/2005356/pexels-photo-2005356.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Red Suit Set",
+				price: 90,
+			},
+			{
+				id: 42,
+				imageUrl:
+					"https://images.pexels.com/photos/3676424/pexels-photo-3676424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Stripe Shirt",
+				price: 45,
+			},
+			{
+				id: 43,
+				imageUrl:
+					"https://images.pexels.com/photos/833185/pexels-photo-833185.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Dot Dress",
+				price: 190,
+			},
 		],
 	},
 	mens: {
@@ -240,6 +443,48 @@ const SHOP_DATA = {
 				id: 35,
 				name: "Burgundy T-shirt",
 				imageUrl: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
+				price: 25,
+			},
+			{
+				id: 51,
+				imageUrl:
+					"https://images.pexels.com/photos/3133688/pexels-photo-3133688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+				name: "White T-shirt",
+				price: 35,
+			},
+			{
+				id: 52,
+				imageUrl:
+					"https://images.pexels.com/photos/1850172/pexels-photo-1850172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Stripe Shirt",
+				price: 50,
+			},
+			{
+				id: 53,
+				imageUrl:
+					"https://images.pexels.com/photos/3622614/pexels-photo-3622614.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Yellow Sweat Set",
+				price: 75,
+			},
+			{
+				id: 54,
+				imageUrl:
+					"https://images.pexels.com/photos/3989362/pexels-photo-3989362.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Blue Shirt",
+				price: 35,
+			},
+			{
+				id: 55,
+				imageUrl:
+					"https://images.pexels.com/photos/3299174/pexels-photo-3299174.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Red Shirt",
+				price: 20,
+			},
+			{
+				id: 56,
+				imageUrl:
+					"https://images.pexels.com/photos/3026283/pexels-photo-3026283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+				name: "Black T-shirt",
 				price: 25,
 			},
 		],

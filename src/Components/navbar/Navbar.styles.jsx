@@ -7,7 +7,7 @@ export const NavbarContainer = styled.div`
 	justify-content: space-between;
 	width: 100%;
 	height: 70px;
-	margin: 10px;
+	margin: 20px 10px;
 	margin-bottom: 10px;
 
 	@media screen and (max-width: 800px) {
@@ -22,10 +22,7 @@ export const LogoContainer = styled(Link)`
 	color: black;
 	height: 70%;
 	width: 70px;
-	padding: 25px;
-
-	align-items: center;
-
+	padding: 15px 20px 10px 40px;
 	@media screen and (max-width: 800px) {
 		width: 50px;
 		padding: 0px;
@@ -45,23 +42,6 @@ export const NavListContainer = styled.div`
 	@media screen and (max-width: 800px) {
 		width: 80%;
 		margin-right: 20px;
-	}
-`;
-
-export const NavListContainerToggled = styled.div`
-	width: 60%;
-	height: 300px;
-
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	text-align: right;
-	justify-content: space-between;
-	align-items: flex-end;
-	background-color: lightgreen;
-
-	@media screen and (max-width: 800px) {
-		width: 80%;
 	}
 `;
 
