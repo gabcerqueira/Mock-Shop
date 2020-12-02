@@ -12,7 +12,7 @@ import { selectCurrentUser } from "./redux/user/userSelectors";
 import { checkUserSession } from "./actions/userActions";
 import { GlobalStyle } from "./global.styles";
 import ErrorBoundary from "./Components/error-boundary/ErrorBoundary";
-
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 // <-- Components -->
 import Spinner from "./Components/spinner/Spinner";
 // <-- Views -->
@@ -36,6 +36,7 @@ const App = ({ currentUser, checkUserSession }) => {
 			<Router>
 				<GlobalStyle />
 				<Navbar />
+				<ScrollToTop />
 				<Switch>
 					<ErrorBoundary>
 						<Suspense fallback={<Spinner />}>

@@ -10,6 +10,7 @@ import {
 
 const CartItem = ({ item, history }) => {
 	const { imageUrl, price, name, quantity } = item;
+	console.log(item);
 	return (
 		<CartItemContainer>
 			<CartItemImg
