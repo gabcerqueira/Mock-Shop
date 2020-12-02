@@ -1,9 +1,7 @@
 import { createClient } from "pexels";
 
-const client = createClient(
-	"563492ad6f917000010000017bcf558a7a4544e9b41af89f788ed08c"
-);
-const query = "Men";
+const client = createClient("mykey");
+const query = "mysearch";
 
 client.photos
 	.search({ query, per_page: 1 })
