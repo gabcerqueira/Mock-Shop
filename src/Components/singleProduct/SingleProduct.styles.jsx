@@ -20,7 +20,7 @@ export const SingleProductContainer = styled.div`
 
 	@media screen and (max-width: 800px) {
 		margin: 40px auto;
-		height: 100vh;
+		height: 150vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -29,11 +29,14 @@ export const SingleProductContainer = styled.div`
 
 export const SingleProductView = styled.div`
 	margin: 5px auto;
-	height: 90%;
+	height: 85%;
 	width: 80%;
 	display: flex;
 	flex-direction: column;
 	border-radius: 10px;
+	@media screen and (max-width: 800px) {
+		height: 60%;
+	}
 `;
 
 export const SingleProductDetail = styled.div`
@@ -44,9 +47,9 @@ export const SingleProductDetail = styled.div`
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	@media screen and (max-width: 800px) {
-		margin: 10px auto - 10px;
+		margin: 10px auto - 5px;
 		height: 20%;
-		width: 80%;
+		width: 90%;
 	}
 `;
 

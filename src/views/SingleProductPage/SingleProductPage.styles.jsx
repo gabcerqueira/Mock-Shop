@@ -4,7 +4,7 @@ export const SingleProductPageContainer = styled.div`
 	margin: 20px auto;
 	padding: 30px 10px;
 	width: 100vw;
-	height: 100vh;
+	height: 150vh;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
