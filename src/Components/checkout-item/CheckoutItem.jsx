@@ -34,11 +34,11 @@ const CheckoutItem = ({ item, clearItem, removeItem, addItem, history }) => {
 			<Name className="name">{name}</Name>
 			<Quantity className="quantity">
 				<Arrow onClick={() => removeItem(item)}>
-					<i class="far fa-minus-square"></i>
+					<i className="far fa-minus-square"></i>
 				</Arrow>
 				<Value>{quantity}</Value>
 				<Arrow onClick={() => addItem(item)}>
-					<i class="far fa-plus-square"></i>
+					<i className="far fa-plus-square"></i>
 				</Arrow>
 			</Quantity>
 			<Price>R${price}</Price>

@@ -18,4 +18,8 @@ export const SectionsTitle = styled.h1`
 	&:hover {
 		transform: scale(1.6);
 	}
+
+	@media screen and (max-width: 800px) {
+		margin: 400px auto 0px auto;
+	}
 `;

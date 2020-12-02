@@ -6,4 +6,8 @@ export const DirectoryMenu = styled.div`
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-top: 40px;
+
+	@media screen and (max-width: 800px) {
+		margin: 40px auto;
+	}
 `;

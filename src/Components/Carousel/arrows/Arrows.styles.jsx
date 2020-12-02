@@ -17,6 +17,9 @@ const arrowStyles = css`
 		opacity: 0.5;
 		transform: scale(1.3);
 	}
+	@media screen and (max-width: 800px) {
+		display: none;
+	}
 `;
 
 export const RightArrowContainer = styled.button`

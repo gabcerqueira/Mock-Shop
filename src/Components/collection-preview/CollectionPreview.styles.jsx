@@ -22,16 +22,16 @@ export const CollectionTitle = styled(Link)`
 	&:hover {
 		transform: scale(1.6);
 	}
+
+	@media screen and (max-width: 800px) {
+		margin: 200px 60px 5px 0px;
+		font-size: 40px;
+	}
 `;
 
 export const Preview = styled.div`
 	display: flex;
 	justify-content: space-between;
 	${fadeIn}
-
-	@media screen and (max-width: 800px) {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-gap: 15px;
-	}
+	height: 40%;
 `;

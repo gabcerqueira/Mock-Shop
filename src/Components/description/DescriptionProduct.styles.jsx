@@ -7,6 +7,10 @@ export const DescriptionCointainer = styled.div`
 	display: flex;
 	flex-flow: row wrap;
 	border-radius: 5px;
+	@media screen and (max-width: 800px) {
+		width: 70%;
+		margin: 10px 20px;
+	}
 `;
 
 export const DescriptionTitle = styled.h2`
