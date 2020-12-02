@@ -101,7 +101,7 @@ const fastFadeIn = keyframes`
 const fadeInFast = css`
 	opacity: 0;
 	animation-name: ${fastFadeIn};
-	animation-duration: 0.5s;
+	animation-duration: 1s;
 	animation-fill-mode: forwards;
 `;
 const addedStyle = css`
