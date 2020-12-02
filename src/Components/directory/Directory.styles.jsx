@@ -8,6 +8,6 @@ export const DirectoryMenu = styled.div`
 	margin-top: 40px;
 
 	@media screen and (max-width: 800px) {
-		margin: 40px auto;
+		margin: 50px auto;
 	}
 `;

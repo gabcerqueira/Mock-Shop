@@ -9,7 +9,7 @@ export const CollectionPreviewContainer = styled.div`
 
 	@media screen and (max-width: 800px) {
 		align-items: center;
-		margin: auto;
+		margin: 20px auto;
 	}
 `;
 
@@ -24,7 +24,7 @@ export const CollectionTitle = styled(Link)`
 	}
 
 	@media screen and (max-width: 800px) {
-		margin: 200px 60px 5px 0px;
+		margin: 240px 70px 60px 0px;
 		font-size: 40px;
 	}
 `;
@@ -33,5 +33,8 @@ export const Preview = styled.div`
 	display: flex;
 	justify-content: space-between;
 	${fadeIn}
-	height: 40%;
+
+	@media screen and (max-width: 800px) {
+		margin: 20px auto 20px auto;
+	}
 `;

@@ -20,6 +20,6 @@ export const SectionsTitle = styled.h1`
 	}
 
 	@media screen and (max-width: 800px) {
-		margin: 100px auto 0px auto;
+		margin: 440px auto 0px auto;
 	}
 `;
