@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addItem } from "../../actions/cartActions";
+import { addItemToRecentlyViewed } from "../../actions/productActions";
 import {
 	CollectionItemContainer,
 	AddButton,
@@ -12,7 +13,12 @@ import {
 	AddedShow,
 } from "./CollectionItem.styles";
 
-const CollectionItem = ({ item, addItem, history }) => {
+const CollectionItem = ({
+	item,
+	addItem,
+	history,
+	addItemToRecentlyViewed,
+}) => {
 	const { name, price, imageUrl } = item;
 
 	const [added, setAdded] = useState(false);
@@ -28,6 +34,7 @@ const CollectionItem = ({ item, addItem, history }) => {
 				imageurl={imageUrl}
 				onClick={() => {
 					history.push(`/product/${item.id}`);
+					addItemToRecentlyViewed(item);
 				}}
 			/>
 			<AddedShow added={added}>
@@ -53,6 +60,7 @@ const CollectionItem = ({ item, addItem, history }) => {
 
 const mapDispatchToProps = (dispatch) => ({
 	addItem: (item) => dispatch(addItem(item)),
+	addItemToRecentlyViewed: (item) => dispatch(addItemToRecentlyViewed(item)),
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(CollectionItem));

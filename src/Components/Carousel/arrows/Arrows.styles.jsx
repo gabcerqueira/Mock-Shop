@@ -4,7 +4,7 @@ const arrowStyles = css`
 	cursor: pointer;
 	border: none;
 	height: 0px;
-	padding: 0 15px;
+	padding: 0 8px;
 	outline: none;
 
 	margin-top: 140px;
@@ -15,7 +15,7 @@ const arrowStyles = css`
 
 	&:hover {
 		opacity: 0.5;
-		transform: scale(1.3);
+		transform: scale(1.4);
 	}
 	@media screen and (max-width: 800px) {
 		display: none;

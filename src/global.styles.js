@@ -1,5 +1,5 @@
 import { createGlobalStyle, css, keyframes } from "styled-components";
-
+import styled from "styled-components";
 const fadeInAnimation = keyframes`
 0% {
 	opacity: 0;
@@ -23,17 +23,27 @@ export const fadeCarousel = css`
 	animation-fill-mode: forwards;
 `;
 
+export const AppContainer = styled.div`
+	max-width: 1060px;
+	margin: 10px auto 20px;
+	padding: 20px 10px;
+`;
+
 export const GlobalStyle = createGlobalStyle`
 
-
+html{
+	margin: 0;
+	height: 100%;
+}
 
 
 body {
 	margin: 0;
-	overflow-x: hidden;
+	
 	
 	font-family: "Open Sans Condensed", sans-serif;
-	background-color: lightgrey;
+	
+	background-color: rgb(236, 236, 236);
 	
 	${fadeIn};
 	

@@ -7,6 +7,7 @@ import WithSpinner from "../../Components/with-spinner/WithSpinner";
 import { selectIsFetching } from "../../redux/shop/shopSelectors";
 import { createStructuredSelector } from "reselect";
 import { SingleProductPageContainer } from "./SingleProductPage.styles";
+import RecentlyViewed from "../../Components/RecentlyViewed/RecentlyViewed";
 
 const SingleProductPageWithSpinner = WithSpinner(SingleProduct);
 
@@ -25,6 +26,7 @@ const SingleProductPage = ({ match, fetchCollectionsStart, isLoading }) => {
 					<SingleProductPageWithSpinner isLoading={isLoading} {...props} />
 				)}
 			/>
+			<RecentlyViewed />
 		</SingleProductPageContainer>
 	);
 };

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { CustomButtonContainer } from "../custom-button/CustomButton.styles";
 
 export const DescriptionCointainer = styled.div`
-	height: 88%;
+	height: 67%;
 	width: 60%;
 	display: flex;
 	flex-flow: row wrap;
@@ -23,10 +23,9 @@ export const DescriptionDetails = styled.div`
 	}
 `;
 export const Description = styled.div`
-	margin: 10px 0px;
-	margin-right: 25px;
+	margin: 10px 5px;
 	padding: 10px 20px;
-	height: 50%;
+	height: 39%;
 	position: relative;
 	@media screen and (max-width: 800px) {
 		width: 100%;
@@ -34,18 +33,17 @@ export const Description = styled.div`
 `;
 
 export const DescriptionButtonsContainer = styled.div`
-	margin: 15px 15px;
+	margin: 95px 25px;
 	height: 40%;
-	width: 100%;
+	width: 80%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 50px;
-	margin-top: 40px;
+	grid-gap: 80px;
 
 	@media screen and (max-width: 800px) {
 		width: 80%;
 		height: 20%;
-		margin: 5px auto 20px auto;
+		margin: 20px auto;
 		grid-template-columns: 1fr;
 		grid-gap: 10px;
 	}

@@ -14,3 +14,8 @@ export const getSingleProductFailure = (errorMessage) => ({
 	type: ProductActionTypes.GET_SINGLE_PRODUCT_SUCCESS,
 	payload: errorMessage,
 });
+
+export const addItemToRecentlyViewed = (product) => ({
+	type: ProductActionTypes.ADD_PRODUCT_TO_RECENTLY_VIEWED,
+	payload: product,
+});

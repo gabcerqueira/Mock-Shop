@@ -5,6 +5,8 @@ import { selectCollection } from "../../redux/shop/shopSelectors";
 import { connect } from "react-redux";
 import HeaderImage from "../../Components/header-image/HeaderImage";
 import headerImageData from "../../data/headerImageData";
+import Directory from "../../Components/directory/Directory";
+import RecentlyViewed from "../../Components/RecentlyViewed/RecentlyViewed";
 import "./collection.scss";
 
 const Collection = ({ collection }) => {
@@ -22,6 +24,11 @@ const Collection = ({ collection }) => {
 				{items.map((Item) => (
 					<CollectionItem key={Item.id} item={Item} />
 				))}
+			</div>
+			<RecentlyViewed />
+			<div className="explore">
+				<h2>Explore More</h2>
+				<Directory />
 			</div>
 		</div>
 	);

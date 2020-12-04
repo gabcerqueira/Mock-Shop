@@ -4,8 +4,11 @@ import { fadeIn } from "../../global.styles";
 export const CollectionPreviewContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	margin: auto;
-	margin-bottom: 30px;
+	margin: 30px auto;
+
+	&:first-child {
+		margin-top: 400px;
+	}
 
 	@media screen and (max-width: 800px) {
 		align-items: center;
@@ -24,7 +27,7 @@ export const CollectionTitle = styled(Link)`
 	}
 
 	@media screen and (max-width: 800px) {
-		margin: 240px 70px 60px 0px;
+		margin: 40px 70px 60px 0px;
 		font-size: 40px;
 	}
 `;
@@ -33,6 +36,8 @@ export const Preview = styled.div`
 	display: flex;
 	justify-content: space-between;
 	${fadeIn}
+	margin: 0px 0px;
+	width: 90%;
 
 	@media screen and (max-width: 800px) {
 		margin: 20px auto 20px auto;

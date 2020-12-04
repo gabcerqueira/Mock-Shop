@@ -38,7 +38,7 @@ const Carousel = ({ data }) => {
 
 	return (
 		<CarouselContainer>
-			<LeftArrow goToPrev={goToPrev} />
+			<LeftArrow goToPrev={goToPrev} dataLength={data.length} />
 			<CarouselData>
 				{data
 					.filter((item, index) => index >= firstIndex && index <= lastIndex)
@@ -47,7 +47,7 @@ const Carousel = ({ data }) => {
 						<CollectionItem key={item.id} item={item} />
 					))}
 			</CarouselData>
-			<RightArrow goToNext={goToNext} />
+			<RightArrow goToNext={goToNext} dataLength={data.length} />
 		</CarouselContainer>
 	);
 };

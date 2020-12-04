@@ -6,9 +6,9 @@ export const NavbarContainer = styled.div`
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
-	height: 70px;
-	margin: 20px 10px;
-	margin-bottom: 10px;
+	height: 150px;
+	margin: 0px;
+	background: lightgrey;
 
 	@media screen and (max-width: 800px) {
 		height: 60px;
@@ -22,7 +22,7 @@ export const LogoContainer = styled(Link)`
 	color: black;
 	height: 70%;
 	width: 70px;
-	padding: 15px 20px 10px 40px;
+	padding: 50px 80px 20px;
 	@media screen and (max-width: 800px) {
 		width: 50px;
 		padding: 0px;
@@ -37,7 +37,7 @@ export const NavListContainer = styled.div`
 	text-align: center;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 20px;
+	padding: 0 40px;
 
 	@media screen and (max-width: 800px) {
 		width: 80%;
@@ -57,7 +57,20 @@ export const NavListItemLink = styled(Link)`
 	text-decoration: none;
 	color: black;
 
+	:after {
+		content: "";
+		display: block;
+		margin: auto;
+		height: 2px;
+		width: 0px;
+
+		transition: width 0.3s;
+	}
+
 	&:hover {
-		border-bottom: 2px solid black;
+		&:after {
+			width: 100%;
+			background: black;
+		}
 	}
 `;

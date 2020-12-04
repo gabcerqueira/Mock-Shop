@@ -10,11 +10,12 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { selectCurrentUser } from "./redux/user/userSelectors";
 import { checkUserSession } from "./actions/userActions";
-import { GlobalStyle } from "./global.styles";
+import { GlobalStyle, AppContainer } from "./global.styles";
 import ErrorBoundary from "./Components/error-boundary/ErrorBoundary";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 // <-- Components -->
 import Spinner from "./Components/spinner/Spinner";
+import Footer from "./Components/footer/Footer";
 // <-- Views -->
 const HomePage = lazy(() => import("./views/homepage/Homepage"));
 const ShopPage = lazy(() => import("./views/shopPage/ShopPage"));
@@ -36,25 +37,28 @@ const App = ({ currentUser, checkUserSession }) => {
 			<Router>
 				<GlobalStyle />
 				<Navbar />
-				<ScrollToTop />
-				<Switch>
-					<ErrorBoundary>
-						<Suspense fallback={<Spinner />}>
-							<Route exact path="/" component={HomePage} />
+				<AppContainer>
+					<ScrollToTop />
+					<Switch>
+						<ErrorBoundary>
+							<Suspense fallback={<Spinner />}>
+								<Route exact path="/" component={HomePage} />
 
-							<Route path="/shop" component={ShopPage} />
-							<Route exact path="/checkout" component={CheckOut} />
-							<Route path="/product/:itemId" component={SingleProductPage} />
-							<Route
-								exact
-								path="/signIn"
-								render={() =>
-									currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
-								}
-							/>
-						</Suspense>
-					</ErrorBoundary>
-				</Switch>
+								<Route path="/shop" component={ShopPage} />
+								<Route exact path="/checkout" component={CheckOut} />
+								<Route path="/product/:itemId" component={SingleProductPage} />
+								<Route
+									exact
+									path="/signIn"
+									render={() =>
+										currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+									}
+								/>
+							</Suspense>
+						</ErrorBoundary>
+					</Switch>
+				</AppContainer>
+				<Footer />
 			</Router>
 		</>
 	);

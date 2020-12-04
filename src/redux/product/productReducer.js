@@ -1,31 +1,16 @@
 import ProductActionTypes from "./productTypes";
-
+import { addItemToRecentlyViewed } from "./productUtils";
 const INITIAL_STATE = {
-	product: null,
-	errorMessage: null,
-	isFetching: false,
+	recentlyViewed: [],
 };
 
 const productReducer = (state = INITIAL_STATE, action) => {
 	const { type, payload } = action;
 	switch (type) {
-		case ProductActionTypes.GET_SINGLE_PRODUCT_START:
+		case ProductActionTypes.ADD_PRODUCT_TO_RECENTLY_VIEWED:
 			return {
 				...state,
-				isFetching: true,
-			};
-		case ProductActionTypes.GET_SINGLE_PRODUCT_SUCCESS:
-			return {
-				...state,
-				product: payload,
-				isFetching: false,
-			};
-		case ProductActionTypes.GET_SINGLE_PRODUCT_FAILURE:
-			return {
-				...state,
-				product: null,
-				errorMessage: payload,
-				isFetching: false,
+				recentlyViewed: addItemToRecentlyViewed(state.recentlyViewed, payload),
 			};
 
 		default:

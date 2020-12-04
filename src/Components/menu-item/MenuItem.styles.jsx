@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const MenuItemContainer = styled.div`
-	height: ${({ size }) => (size ? "380px" : "240px")};
+	height: 240px;
 	min-width: 30%;
+
 	overflow: hidden;
 	flex: 1 1 auto;
 	display: flex;
@@ -11,6 +12,7 @@ export const MenuItemContainer = styled.div`
 	border: 1px solid black;
 	margin: 0 7.5px 15px;
 	overflow: hidden;
+
 	&:hover {
 		cursor: pointer;
 		& .background-image {
@@ -30,6 +32,7 @@ export const MenuItemContainer = styled.div`
 
 	@media screen and (max-width: 800px) {
 		height: 200px;
+		width: 100%;
 	}
 `;
 
@@ -39,6 +42,11 @@ export const BackgroundImageContainer = styled.div`
 	background-size: cover;
 	background-position: center;
 	background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+
+	@media screen and (max-width: 800px) {
+		width: 100%;
+		height: 100%;
+	}
 `;
 
 export const ContentContainer = styled.div`

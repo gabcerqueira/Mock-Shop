@@ -6,6 +6,7 @@ import { fetchCollectionsStart } from "../../actions/shopActions";
 
 import "./shopPage.scss";
 import Spinner from "../../Components/spinner/Spinner";
+import "./shopPage.scss";
 
 // <-- Lazy imports -->
 const CollectionOverviewContainer = lazy(() =>

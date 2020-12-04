@@ -7,10 +7,12 @@ import {
 	CartItemName,
 	CartItemPrice,
 } from "./CartItem.styles";
+import { connect } from "react-redux";
+import { addItemToRecentlyViewed } from "../../actions/productActions";
 
-const CartItem = ({ item, history }) => {
+const CartItem = ({ item, history, addItemToRecentlyViewed }) => {
 	const { imageUrl, price, name, quantity } = item;
-	console.log(item);
+
 	return (
 		<CartItemContainer>
 			<CartItemImg
@@ -18,6 +20,7 @@ const CartItem = ({ item, history }) => {
 				alt="item"
 				onClick={() => {
 					history.push(`/product/${item.id}`);
+					addItemToRecentlyViewed(item);
 				}}
 			/>
 			<CartItemDetails>
@@ -30,4 +33,12 @@ const CartItem = ({ item, history }) => {
 	);
 };
 
-export default withRouter(React.memo(CartItem));
+const mapDispatchToProps = (dispatch) => ({
+	addItemToRecentlyViewed: (product) =>
+		dispatch(addItemToRecentlyViewed(product)),
+});
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(withRouter(React.memo(CartItem)));

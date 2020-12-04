@@ -2,12 +2,13 @@ import styled, { keyframes, css } from "styled-components";
 import { CustomButtonContainer } from "../custom-button/CustomButton.styles";
 import { fadeCarousel } from "./../../global.styles";
 export const CollectionItemContainer = styled.div`
-	width: 20vw;
+	width: 200px;
 	display: flex;
 	flex-direction: column;
-	height: 350px;
-	align-items: center;
+	height: 360px;
 	position: relative;
+	align-items: center;
+
 	margin: 0 5px;
 	${fadeCarousel};
 
@@ -35,7 +36,7 @@ export const AddButton = styled(CustomButtonContainer)`
 	width: 80%;
 	opacity: 0.7;
 	position: absolute;
-	top: 245px;
+	top: 240px;
 	display: none;
 	@media screen and (max-width: 800px) {
 		display: block;

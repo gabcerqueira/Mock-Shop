@@ -2,9 +2,11 @@ import React from "react";
 
 import { RightArrowContainer } from "./Arrows.styles";
 
-const RightArrow = ({ goToNext }) => (
+const RightArrow = ({ goToNext, dataLength }) => (
 	<RightArrowContainer onClick={goToNext}>
-		<span className="fas fa-arrow-circle-right fa-2x"></span>
+		{dataLength > 4 ? (
+			<span className="fas fa-arrow-circle-right fa-2x"></span>
+		) : null}
 	</RightArrowContainer>
 );
 
