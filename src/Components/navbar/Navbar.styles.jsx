@@ -29,6 +29,10 @@ export const LogoContainer = styled(Link)`
 	}
 `;
 
+export const SearchBarContainer = styled.div`
+	margin: auto;
+`;
+
 export const NavListContainer = styled.div`
 	width: 60%;
 	display: flex;

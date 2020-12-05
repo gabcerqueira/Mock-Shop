@@ -11,7 +11,7 @@ export const CartDropdownContainer = styled.div`
 	border: 1px solid black;
 	background-color: white;
 	top: 100px;
-	right: 120px;
+	right: 48px;
 	z-index: 5;
 `;
 

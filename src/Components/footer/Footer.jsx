@@ -60,7 +60,28 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<div className="satoru">&copy;2020 Gabriel Cerqueira</div>
+				<div className="satoru">
+					<div className="social-media">
+						<ul>
+							<li className="list-unstyled">
+								<a href="#!">
+									<i className="fab fa-instagram fa-2x"></i>
+								</a>
+							</li>
+							<li className="list-unstyled">
+								<a href="#!">
+									<i className="fab fa-linkedin fa-2x"></i>
+								</a>
+							</li>
+							<li className="list-unstyled">
+								<a href="#!">
+									<i className="fab fa-github fa-2x"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<span>&copy;2020 Gabriel Cerqueira</span>
+				</div>
 			</div>
 		</div>
 	);

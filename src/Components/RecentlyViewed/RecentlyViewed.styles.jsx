@@ -13,11 +13,11 @@ export const RecentlyContainer = styled.div`
 `;
 
 export const RecentlyTitle = styled.h2`
-	font-size: 36px;
+	font-size: 34px;
 
 	margin: 10px 20px 40px;
 	align-self: center;
-	width: 20%;
+	width: 18%;
 	transition: transform 0.5s;
 	&:hover {
 		transform: scale(1.6);

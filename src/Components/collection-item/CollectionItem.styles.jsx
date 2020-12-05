@@ -86,6 +86,7 @@ export const PriceContainer = styled.span`
 	@media screen and (max-width: 800px) {
 		width: 20%;
 		margin: 0px 10px;
+		padding: 0px 10px;
 	}
 `;
 const fastFadeIn = keyframes`

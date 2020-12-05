@@ -7,11 +7,13 @@ import { selectCurrentUser } from "../../redux/user/userSelectors";
 import { selectCartHidden } from "../../redux/cart/cartSelectors";
 import { createStructuredSelector } from "reselect";
 import { signOutStart } from "../../actions/userActions";
+import SearchBar from "../searchBar/SearchBar";
 import {
 	NavbarContainer,
 	LogoContainer,
 	NavListContainer,
 	NavListItemLink,
+	SearchBarContainer,
 } from "./Navbar.styles";
 
 const Navbar = ({ currentUser, hidden, signOutStart }) => {
@@ -20,6 +22,9 @@ const Navbar = ({ currentUser, hidden, signOutStart }) => {
 			<LogoContainer to="/">
 				<Logo className="logo" />
 			</LogoContainer>
+			<SearchBarContainer>
+				<SearchBar />
+			</SearchBarContainer>
 
 			<NavListContainer>
 				<NavListItemLink to="/shop">Shop</NavListItemLink>

@@ -5,6 +5,7 @@ export const CollectionPreviewContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: 30px auto;
+	padding: 2px auto;
 
 	&:first-child {
 		margin-top: 400px;
@@ -36,8 +37,8 @@ export const Preview = styled.div`
 	display: flex;
 	justify-content: space-between;
 	${fadeIn}
-	margin: 0px 0px;
-	width: 90%;
+	margin: 0px auto;
+	width: 100%;
 
 	@media screen and (max-width: 800px) {
 		margin: 20px auto 20px auto;
