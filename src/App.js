@@ -26,6 +26,7 @@ const CheckOut = lazy(() => import("./views/checkout/CheckOut"));
 const SingleProductPage = lazy(() =>
 	import("./views/SingleProductPage/SingleProductPage")
 );
+const SearchPage = lazy(() => import("./views/SearchPage/SearchPage"));
 
 const App = ({ currentUser, checkUserSession }) => {
 	useEffect(() => {
@@ -43,7 +44,7 @@ const App = ({ currentUser, checkUserSession }) => {
 						<ErrorBoundary>
 							<Suspense fallback={<Spinner />}>
 								<Route exact path="/" component={HomePage} />
-
+								<Route path="/search/:searchKey" component={SearchPage} />
 								<Route path="/shop" component={ShopPage} />
 								<Route exact path="/checkout" component={CheckOut} />
 								<Route path="/product/:itemId" component={SingleProductPage} />

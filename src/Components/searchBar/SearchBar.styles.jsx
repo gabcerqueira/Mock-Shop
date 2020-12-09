@@ -12,7 +12,7 @@ export const SearchBarInput = styled.input`
 	width: 15rem;
 	background: lightgrey;
 	border: none;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid grey;
 	padding: 0.5rem;
 	outline: none;
 
@@ -30,7 +30,7 @@ export const SearchButton = styled.button`
 	background: #f2f1f9;
 	background: lightgrey;
 	border: none;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid grey;
 	cursor: pointer;
 	&:hover {
 		background: lightgrey;

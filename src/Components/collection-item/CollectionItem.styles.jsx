@@ -9,7 +9,9 @@ export const CollectionItemContainer = styled.div`
 	position: relative;
 	align-items: center;
 
-	margin: 0 5px;
+	border-radius: 5px;
+
+	margin: 20px 5px;
 	${fadeCarousel};
 
 	&:hover {
@@ -34,10 +36,12 @@ export const CollectionItemContainer = styled.div`
 
 export const AddButton = styled(CustomButtonContainer)`
 	width: 80%;
+	height: 15%;
 	opacity: 0.7;
 	position: absolute;
-	top: 240px;
+	top: 230px;
 	display: none;
+
 	@media screen and (max-width: 800px) {
 		display: block;
 		padding: 0 10px;
@@ -54,7 +58,7 @@ export const BackgroundImage = styled.div`
 	margin-bottom: 5px;
 	background-image: ${({ imageurl }) => `url(${imageurl})`};
 	cursor: pointer;
-
+	border-radius: 5px;
 	&:hover {
 		-webkit-box-shadow: 2px 2px 11px 3px rgba(0, 0, 0, 0.46);
 		-moz-box-shadow: 2px 2px 11px 3px rgba(0, 0, 0, 0.46);
@@ -64,7 +68,7 @@ export const BackgroundImage = styled.div`
 
 export const CollectionFooterContainer = styled.div`
 	width: 100%;
-	height: 5%;
+	height: 10%;
 	display: flex;
 	justify-content: space-between;
 	font-size: 18px;
@@ -73,7 +77,8 @@ export const CollectionFooterContainer = styled.div`
 
 export const NameContainer = styled.span`
 	width: 85%;
-	margin-bottom: 15px;
+
+	margin: 5px 10px 15px;
 	@media screen and (max-width: 800px) {
 		width: 80%;
 	}
@@ -82,7 +87,7 @@ export const NameContainer = styled.span`
 export const PriceContainer = styled.span`
 	width: 15%;
 	text-align: right;
-
+	margin: 5px 10px 15px;
 	@media screen and (max-width: 800px) {
 		width: 20%;
 		margin: 0px 10px;
@@ -108,11 +113,12 @@ const fadeInFast = css`
 `;
 const addedStyle = css`
 	display: block;
-	height: 88%;
+	height: 83%;
 	width: 100%;
 	position: absolute;
 	z-index: 10;
 	margin-bottom: 5px;
+	border-radius: 5px;
 	background-color: rgba(0, 190, 190, 0.7);
 
 	span {

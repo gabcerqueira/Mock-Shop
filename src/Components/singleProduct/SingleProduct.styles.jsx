@@ -13,9 +13,6 @@ export const SingleProductContainer = styled.div`
 	height: 50%;
 	align-items: flex-start;
 
-	background-color: white;
-	border-radius: 20px;
-	${boxShadow};
 	margin: 40px 40px;
 
 	@media screen and (max-width: 800px) {
@@ -42,7 +39,7 @@ export const SingleProductView = styled.div`
 export const SingleProductDetail = styled.div`
 	height: 20%;
 	width: 90%;
-	margin: 5px 0px;
+	margin: 5px auto;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
@@ -55,12 +52,12 @@ export const SingleProductDetail = styled.div`
 `;
 
 export const Price = styled.span`
-	font-size: 32px;
-	margin: 5px auto;
+	font-size: 30px;
+	margin: 5px 20px;
 `;
 export const Name = styled.span`
-	font-size: 32px;
-	margin: 5px auto;
+	font-size: 30px;
+	margin: 5px 20px;
 `;
 
 export const BackgroundImage = styled.div`
@@ -72,6 +69,7 @@ export const BackgroundImage = styled.div`
 	margin-bottom: 5px;
 	background-image: ${({ imageurl }) => `url(${imageurl})`};
 	cursor: pointer;
+	border-radius: 5px;
 
 	@media screen and (max-width: 800px) {
 		width: 80%px;

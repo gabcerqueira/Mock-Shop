@@ -19,3 +19,19 @@ export const addItemToRecentlyViewed = (product) => ({
 	type: ProductActionTypes.ADD_PRODUCT_TO_RECENTLY_VIEWED,
 	payload: product,
 });
+
+// <-- SEARCH PRODUCT ACTIONS -->
+export const searchProductsStart = (searchKey) => ({
+	type: ProductActionTypes.SEARCH_PRODUCTS_START,
+	payload: searchKey,
+});
+
+export const searchProductSuccess = (resultItems) => ({
+	type: ProductActionTypes.SEARCH_PRODUCTS_SUCCESS,
+	payload: resultItems,
+});
+
+export const searchProductFailure = (errorMessage) => ({
+	type: ProductActionTypes.SEARCH_PRODUCTS_FAILURE,
+	payload: errorMessage,
+});
